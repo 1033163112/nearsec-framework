@@ -1,7 +1,7 @@
 nearsec
 =========
 
-当前版本: nearsec debug v0.2.0 (2016-03-07)
+当前版本: nearsec-framework debug v0.2.0 (2016-03-07)
 
 
 核心功能
