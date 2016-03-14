@@ -1,0 +1,49 @@
+nearsec
+	|data										存放项目所需数据
+		|log									日志
+		|features								规则
+		|conf									项目配置
+		|result									处理结果
+	|lib										第三方组件
+	|core
+		|controller.py							分发器
+		|option.py								选项
+		|console.py								控制台调用
+		|normal.py								正常调用
+		|common.py								通用代码
+		|output.py								输出信息
+		|log.py									日志
+		|exception.py							错误信息
+		|baseplugins.py							组件base
+		|定时执行
+		|远程下任务
+	|moudle										项目模块
+		|check
+			|door	
+				|horse.py						后门检测
+				|process.py						进程检测
+				|system.py						系统关键文件检测
+			|network							
+				|network.py						检测网络环境
+				|dns.py							DNS检测
+				|arp.py							检测arp攻击
+			|vuln								检测系统漏洞
+			|conf								检测配置文件
+				|apache.py
+				|database.py
+				|ssh.py
+				|tomcat.py
+		|auxil									辅助模块
+			|collect.py							采集特征码
+			|simulation							模拟攻击（待定）
+				|信息收集
+				|网站探测
+		|fuzzing								模糊测试
+		|tools									工具箱
+	|util										工具
+	|plugins									插件
+	
+		
+核心思想：亲近安全
+		
+
