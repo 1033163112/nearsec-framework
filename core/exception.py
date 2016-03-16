@@ -11,6 +11,5 @@ class NearsecBaseException(Exception):
 	pass
 
 class NearsecKeyboardInterruptException(KeyboardInterrupt):
-	print 'KeyboardInterrupt'
 	pass
 

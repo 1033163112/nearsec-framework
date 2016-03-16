@@ -42,8 +42,8 @@ class Moudle(object):
                         	except KeyboardInterrupt:
 					common.exitCtrlC()
 			else:
-				print cmd.strip()
-				self.start(self, cmd)
+				if self.start(self, cmd):
+					break
                                 cmd = None
 
 	@staticmethod
@@ -54,6 +54,8 @@ class Moudle(object):
 				self.usage(self)
 			elif args[0] in ('-v', '--version'):
 				self.version(self)
+			elif args[0] in ('back',''):
+				return 1
 			else:
 				self.usage(self)
 		else:

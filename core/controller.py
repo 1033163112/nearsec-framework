@@ -9,6 +9,7 @@ import sys
 import getopt
 import output
 from core import Core
+from core import common
 
 class Controller(object):
 
@@ -20,8 +21,8 @@ class Controller(object):
 	core = Core()
 
 	#根据参数分配到指定处理方法
-	def control(self, argv):
-		argv = argv.split()
+	def control(self, argvs):
+		argv = argvs.split()
 		if argv[0] in self.param:
 			if argv[0] in self.help:
 				Usage()
@@ -38,8 +39,12 @@ class Controller(object):
 	        cmd = None
        		while(True):
                 	if cmd is None:
-                        	cmd = raw_input("\033[1;31;40mnearsec\033[0m:" + "\033[1;34;40m" + sys.path[0] + "\033[0m# ")
-                	else:
+				try:
+                        		cmd = raw_input("\033[1;31;40mnearsec\033[0m:" + "\033[1;34;40m" + sys.path[0] + "\033[0m# ")
+	                	except KeyboardInterrupt:
+                                        common.exitCtrlC()
+
+			else:
                                 self.control(cmd)
                         	cmd = None
 			

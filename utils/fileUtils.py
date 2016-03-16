@@ -34,7 +34,6 @@ def iteratorDir(path):
 	dirPathList = []
 	try:
                 fileList = os.listdir(path)
-		path = '/usr/develop/git/nearsec/moudle/'
         	for file in fileList:
                 	if os.path.isdir(path + file):
                         	dirPathList.append(path + file)
