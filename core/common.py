@@ -8,7 +8,7 @@
 import sys
 
 def getFrameworkName():
-	return 'nearsec'
+	return 'nearsec-framework'
 
 def exitCtrlC():
 	status = raw_input('\n是否退出(Y/N):')
