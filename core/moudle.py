@@ -65,7 +65,6 @@ class Moudle(object):
 				return 1
 			else:
 				self.moudleConsole(self, args)
-	def parsingOpt():
 		
 
 	@staticmethod
