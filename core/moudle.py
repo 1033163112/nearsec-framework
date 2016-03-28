@@ -8,17 +8,19 @@
 import readline
 import sys
 import getopt
-
+import sys
+import os
 import core
 import exception
 import common
+import log
 
 class Moudle(object):
 	runInfo = {
-	 	'longOpts':'test=',
+	 	'longOpts':['help'],
         	'shortOpts':'hv',
         	'help':'help',
-        	'version':'check 0.1'
+        	'version':'version 1.0'
 	}
 	
 	@staticmethod	
@@ -30,7 +32,7 @@ class Moudle(object):
 		print self.runInfo['version']
  
 	def __init__(self):
-		print "init Controller ."
+		log.todo('init moudle ' + os.path.abspath(sys.argv[0]))
 	
 	@staticmethod
         def accpt(self, moudle):
@@ -48,18 +50,24 @@ class Moudle(object):
 
 	@staticmethod
 	def start(self, argv):
-		args = argv.split()
-		if len(args) is 1:
-			if args[0] in ('-h', '--help'):
+		try:
+			print self.runInfo['longOpts']
+			options,args = getopt.getopt(argv.split(' '), self.runInfo['shortOpts'], self.runInfo['longOpts'])
+		except getopt.GetoptError, e:
+			self.start('-h')
+		for n,v in options:
+			log.debug(n,v)
+			if n in ('-h', '--help'):
 				self.usage(self)
-			elif args[0] in ('-v', '--version'):
+			elif n in ('-v', '--version'):
 				self.version(self)
-			elif args[0] in ('back',''):
+			elif n in ('back',''):
 				return 1
 			else:
-				self.usage(self)
-		else:
-			self.diyConsole(self, args)
+				self.moudleConsole(self, args)
+	def parsingOpt():
+		
+
 	@staticmethod
 	def moudleConsole(self, argv):
-		print 'diy .', agrv
+		log.todo('自定义参数控制执行流程 ' + os.path.abspath(sys.argv[0]))

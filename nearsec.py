@@ -17,7 +17,6 @@ def initEnvironment():
 	path = '/usr/develop/git/nearsec-framework/moudle/'
 	dirPathList = fileUtils.iteratorDir(path)
 	sys.path += dirPathList
-	print sys.path
 		
 
 def start(argv):

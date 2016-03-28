@@ -5,14 +5,27 @@
 #Create:        2016-03-08
 #Authoruis:     kun/
 
-from core.moudle import Moudle
+import os
 import sys
+from core.moudle import Moudle
+from core import log
 
 class check(Moudle):
 	
 	def __init__():
 		print "check init ."
 	
+	runInfo = {
+                'longOpts':['help','test'],
+                'shortOpts':'hvt',
+                'help':'help',
+                'version':'check 0.1'
+        }
+
+	"""
+	自定义控制台
+	"""
 	@staticmethod
 	def moudleConsole(self, argv):
-		print 'diyConsole !',sys.path[0]
+		print argv
+		log.todo('moudleConsole ')
