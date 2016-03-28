@@ -25,7 +25,7 @@ def todo(*messages):
 
 #记录日志
 def save(msg):
-	fileUtils.write('/usr/develop/git/nearsec-framework/data/log/debug.log', msg, 'a+')
+	fileUtils.write('/usr/develop/git/nearsec-framework-master/data/log/debug.log', msg, 'a+')
 
 if __name__ == '__main__':
 	error('error')

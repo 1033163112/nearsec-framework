@@ -14,7 +14,7 @@ from core import pythonstartup
 from utils import fileUtils
 
 def initEnvironment():
-	path = '/usr/develop/git/nearsec-framework/moudle/'
+	path = '/usr/develop/git/nearsec-framework-master/moudle/'
 	dirPathList = fileUtils.iteratorDir(path)
 	sys.path += dirPathList
 		

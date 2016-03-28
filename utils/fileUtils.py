@@ -33,7 +33,8 @@ def traversal_dir(filepath, prin=False):
 def iteratorDir(path):
 	dirPathList = []
 	try:
-                fileList = os.listdir(path)
+                print path
+		fileList = os.listdir(path)
         	for file in fileList:
                 	if os.path.isdir(path + file):
                         	dirPathList.append(path + file)
