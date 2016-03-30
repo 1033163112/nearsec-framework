@@ -12,10 +12,11 @@ import os
 from core import console
 from core import pythonstartup 
 from utils import fileUtils
+from core import session
 
 def initEnvironment():
-	path = '/usr/develop/git/nearsec-framework-master/moudle/'
-	dirPathList = fileUtils.iteratorDir(path)
+	session.PROJECT_ABS_PATH = sys.path[0] + '/moudle/'
+	dirPathList = fileUtils.iteratorDir(session.PROJECT_ABS_PATH)
 	sys.path += dirPathList
 		
 

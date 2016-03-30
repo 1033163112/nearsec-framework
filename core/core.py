@@ -7,28 +7,27 @@
 
 import sys
 import common
+import session
 
 class Core(object):
 	
-	def confirmMoudle(self, path, moudle):
-		list = path.split('/')
-		last = list[len(list) - 1]
-		for ls in list:
-			if cmp(ls, common.getFrameworkName()) is 0:
-				if cmp(moudle, last) is 0:
+	#确定模块是否存在 存在返回1
+	def confirmMoudle(self, path, moudleName):
+		for i in range(1, len(path)):
+			if moudleName in path[i]:
+				if session.PROJECT_ABS_PATH in path[i]: #确定是否为本项目的模块
 					return 1
+
 		return 0
 
 		
 	def load(self, moudle):
 		flag = None
-		for i in range(1, len(sys.path)):
-			if self.confirmMoudle(sys.path[i], moudle):
-				obj =  __import__(moudle)
-                		cls = getattr(obj, moudle)
-                		cls.accpt(cls,moudle)
-				flag = 1
-				break;
+		if self.confirmMoudle(sys.path, moudle):
+			obj =  __import__(moudle)
+               		cls = getattr(obj, moudle)
+               		cls.accpt(cls, moudle)
+			flag = 1
 				
 		if flag is None:
 			print "模块不存在！"

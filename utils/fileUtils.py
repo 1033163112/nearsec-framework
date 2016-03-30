@@ -33,7 +33,6 @@ def traversal_dir(filepath, prin=False):
 def iteratorDir(path):
 	dirPathList = []
 	try:
-                print path
 		fileList = os.listdir(path)
         	for file in fileList:
                 	if os.path.isdir(path + file):
@@ -105,7 +104,6 @@ def findListStr(filepath, strList):
 	if file_text != -1:
 		for str in strList:
 			if file_text.lower().find(str.lower()) != -1:
-				print str , "\t\t==>",filepath
 				if flag:
 					flag += flag
 				else:
