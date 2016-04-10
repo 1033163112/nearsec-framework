@@ -51,7 +51,6 @@ class Moudle(object):
 	@staticmethod
 	def start(self, argv):
 		try:
-			print self.runInfo['longOpts']
 			options,args = getopt.getopt(argv.split(' '), self.runInfo['shortOpts'], self.runInfo['longOpts'])
 		except getopt.GetoptError, e:
 			self.start('-h')
